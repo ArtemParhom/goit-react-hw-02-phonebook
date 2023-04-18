@@ -1,5 +1,5 @@
 .container {
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
   font-size: 32px;
   text-align: center;
@@ -19,7 +19,7 @@ button {
 }
 
 li {
-  font-size: 26px;
+  font-size: 22px;
   list-style: none;
   display: flex;
   justify-content: space-between;
