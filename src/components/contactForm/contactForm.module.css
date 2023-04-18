@@ -1,13 +1,14 @@
 .formTitle {
-  font-size: 68px;
+  font-size: 58px;
 }
 .formBox {
   border: 1px solid #000;
   border-radius: 5px;
-  padding: 50px;
+  padding: 20px;
 }
 .titleName {
-  font-size: larger;
+  font-size: 42px;
+  margin: 0;
 }
 .formButton {
   display: block;

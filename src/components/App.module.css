@@ -1,18 +1,17 @@
 .container {
-  height: 100%;
   width: 1000px;
   margin: 0 auto;
-  font-size: 42px;
+  font-size: 32px;
   text-align: center;
   color: rgb(114, 114, 114);
 }
 input,
 button {
   width: 300px;
-  height: 48px;
+  height: 38px;
   border-radius: 5px;
   box-sizing: border-box;
-  font-size: 32px;
+  font-size: 24px;
   padding: 0 15px;
 }
 
@@ -20,7 +19,7 @@ li {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  padding: 5px;
 }
 li button:active {
   background-color: blueviolet;
