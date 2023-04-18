@@ -1,0 +1,18 @@
+.formTitle {
+  font-size: 68px;
+}
+.formBox {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 50px;
+}
+.titleName {
+  font-size: larger;
+}
+.formButton {
+  display: block;
+  margin: 25px auto;
+}
+.formButton:active {
+  background-color: rgba(137, 43, 226, 0.212);
+}

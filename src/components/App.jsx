@@ -1,5 +1,9 @@
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
+import { Contacts } from './contacts/Contacts';
+import { Filter } from './filter/filter';
+import { ContactForm } from './contactForm/ContactForm';
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -65,77 +69,28 @@ export class App extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          height: '100vh',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
+      <div className={css.container}>
         React homework templated
-        <h1>Phonebook</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            <h3>Name</h3>
-            <input
-              type="text"
-              name={'name'}
-              value={this.state.name}
-              onChange={this.userInputChange}
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-              required
-            />
-          </label>
-
-          <label>
-            <h3>Number</h3>
-            <input
-              type="tel"
-              name={'number'}
-              value={this.state.number}
-              onChange={this.userInputChange}
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-              required
-            />
-          </label>
-          <button type="submit">Add contact</button>
-        </form>
+        <ContactForm
+          onSubmit={this.handleSubmit}
+          value={this.state.name}
+          onChange={this.userInputChange}
+          valueNum={this.state.number}
+        />
         {this.state.contacts.length === 0 ? (
           <h4>No contacts</h4>
         ) : (
           <div>
-            <div>
-              <label>
-                <h3>Find contacts by name</h3>
-                <input
-                  type="text"
-                  name="filter"
-                  value={this.state.filter}
-                  onChange={this.userInputChange}
-                />
-                <ul>{this.filterContact()}</ul>
-              </label>
-            </div>
-            <div>
-              <h2>Contacts</h2>
-              <ul>
-                {this.state.contacts.map(contact => (
-                  <li key={this.createId()} id={this.createId()} name="name">
-                    {contact.name}: {contact.number}{' '}
-                    <button
-                      type="button"
-                      onClick={() => this.handleDelete(contact.id)}
-                    >
-                      delete
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Filter
+              onChange={this.userInputChange}
+              value={this.state.filter}
+              filterContact={this.filterContact}
+            />
+            <Contacts
+              onChange={this.handleDelete}
+              createId={this.createId}
+              regtrt={this.state}
+            />
           </div>
         )}
       </div>
