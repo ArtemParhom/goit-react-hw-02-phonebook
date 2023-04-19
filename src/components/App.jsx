@@ -17,9 +17,11 @@ export class App extends Component {
     number: '',
     filter: '',
   };
+
   reset = () => {
     this.setState({ name: '', number: '' });
   };
+
   userInputChange = e => {
     const { name, value } = e.currentTarget;
 
