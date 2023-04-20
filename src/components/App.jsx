@@ -57,13 +57,15 @@ export class App extends Component {
   render() {
     const { filter } = this.state;
     const contactList = this.filterContact();
+
     return (
       <div className={css.container}>
         <ContactForm onSubmit={this.addContact} />
         {contactList.length === 0 ? (
-          <h4>No contacts</h4>
+          <h2 className={css.contactsTitle}>No contacts</h2>
         ) : (
           <div>
+            <h2 className={css.contactsTitle}>Contacts</h2>
             <Filter onChange={this.changeFilter} value={filter} />
             <ContactsList
               contactList={contactList}

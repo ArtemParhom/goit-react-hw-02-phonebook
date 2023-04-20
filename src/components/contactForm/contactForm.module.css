@@ -1,19 +1,31 @@
 .formTitle {
-  font-size: 48px;
+  font-size: 56px;
 }
 .formBox {
   border: 1px solid #000;
-  border-radius: 5px;
-  padding: 20px;
+  padding: 12px;
+  margin: 36px 0;
 }
 .titleName {
-  font-size: 32px;
-  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.formInput {
+  width: 240px;
+  height: 28px;
+  border: 1px solid #c8c8c8;
+  margin-bottom: 28px;
 }
 .formButton {
   display: block;
-  margin: 25px auto;
+  font-size: 20px;
+  padding: 3px 10px;
+  border: 1px solid #c8c8c8;
+  border-radius: 8px;
+  background-color: white;
 }
 .formButton:active {
-  background-color: rgba(137, 43, 226, 0.212);
+  background-color: rgb(43, 43, 142);
+  color: white;
 }

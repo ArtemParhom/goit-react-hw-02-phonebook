@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import css from './contactForm.module.css';
 
 class ContactForm extends Component {
@@ -28,11 +28,12 @@ class ContactForm extends Component {
           <label>
             <h3 className={css.titleName}>Name</h3>
             <input
+              className={css.formInput}
               type="text"
               name="name"
               value={name}
               onChange={this.handleChange}
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              pattern="^[a-zA-Za-яА-Я]+(([' -][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
@@ -41,6 +42,7 @@ class ContactForm extends Component {
           <label>
             <h3 className={css.titleName}>Number</h3>
             <input
+              className={css.formInput}
               type="tel"
               name="number"
               value={number}
