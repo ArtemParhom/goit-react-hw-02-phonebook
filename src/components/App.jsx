@@ -61,7 +61,7 @@ export class App extends Component {
     return (
       <div className={css.container}>
         <ContactForm onSubmit={this.addContact} />
-        {contactList.length === 0 ? (
+        {this.state.contacts.length === 0 ? (
           <h2 className={css.contactsTitle}>No contacts</h2>
         ) : (
           <div>
